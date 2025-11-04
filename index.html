@@ -171,7 +171,177 @@
       color: var(--light);
     }
 
-    /* Main layout */
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 80px 40px;
+      background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                  url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+      background-size: cover;
+      background-position: center;
+      border-radius: var(--radius);
+      text-align: center;
+      color: var(--light);
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .hero-quote {
+      font-style: italic;
+      font-size: 24px;
+      margin: 40px 0;
+      color: var(--secondary);
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .hero-quote:before, .hero-quote:after {
+      content: '"';
+      font-size: 40px;
+      color: var(--secondary);
+      position: absolute;
+    }
+
+    .hero-quote:before {
+      left: -10px;
+      top: -10px;
+    }
+
+    .hero-quote:after {
+      right: -10px;
+      bottom: -20px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 60px 40px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: var(--secondary);
+      text-align: center;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--secondary);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 40px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: var(--secondary);
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .about-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Services Section - Original Software Interface */
+    .software-interface {
+      background: var(--dark);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .software-header {
+      padding: 16px 20px;
+      background: var(--primary);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .software-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .software-controls {
+      display: flex;
+      gap: 10px;
+    }
+
+    .software-body {
+      padding: 20px;
+    }
+
+    /* Main layout for software */
     .main {
       display: grid;
       grid-template-columns: 220px 1fr 300px;
@@ -220,27 +390,6 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
-    }
-
-    /* Hero section */
-    .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-    }
-
-    .hero h1 {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
     }
 
     /* Sports grid */
@@ -369,82 +518,6 @@
     .view-more-btn:hover {
       background: var(--secondary);
       color: var(--primary);
-    }
-
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .modal.active {
-      display: flex;
-    }
-
-    .modal-content {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      width: 90%;
-      max-width: 800px;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 20px;
-    }
-
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .modal-title {
-      font-size: 20px;
-      font-weight: 700;
-    }
-
-    .close-modal {
-      background: none;
-      border: none;
-      color: var(--text);
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    .modal-odds-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 12px;
-    }
-
-    .modal-odds-card {
-      background: var(--gray);
-      padding: 12px;
-      border-radius: var(--radius-sm);
-      text-align: center;
-    }
-
-    .modal-odds-value {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--secondary);
-      margin: 8px 0;
-    }
-
-    .modal-odds-name {
-      font-size: 14px;
-      color: var(--text-muted);
     }
 
     /* Bet slip */
@@ -634,37 +707,124 @@
       color: var(--text);
     }
 
-    /* Notification */
-    .notification {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 12px 16px;
-      border-radius: var(--radius-sm);
-      background: var(--success);
-      color: white;
-      font-weight: 600;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      transform: translateX(150%);
-      transition: transform 0.3s ease;
-      z-index: 1000;
+    /* Steps Section */
+    .steps-container {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin-top: 50px;
     }
 
-    .notification.show {
-      transform: translateX(0);
+    .steps-container:before {
+      content: '';
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--border);
+      z-index: 1;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      text-align: center;
+    }
+
+    .step-number {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--secondary);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .step-title {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: var(--light);
+    }
+
+    .step-description {
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 250px;
     }
 
     /* Footer */
     .footer {
-      padding: 12px;
-      text-align: center;
+      padding: 40px 20px 20px;
       background: var(--card-bg);
       border-radius: var(--radius);
       border: 1px solid var(--border);
     }
 
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    .footer-column h3 {
+      color: var(--secondary);
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--secondary);
+    }
+
+    .copyright {
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
     /* Responsive */
     @media (max-width: 1024px) {
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .steps-container {
+        flex-direction: column;
+        gap: 40px;
+      }
+      
+      .steps-container:before {
+        display: none;
+      }
+      
       .main {
         grid-template-columns: 1fr;
         grid-auto-rows: min-content;
@@ -686,17 +846,40 @@
         flex-direction: row;
         flex-wrap: wrap;
       }
-      
-      .modal-content {
-        width: 95%;
-      }
     }
 
     @media (max-width: 768px) {
       .hero {
+        padding: 60px 20px;
+      }
+      
+      .hero h1 {
+        font-size: 36px;
+      }
+      
+      .hero p {
+        font-size: 18px;
+      }
+      
+      .hero-quote {
+        font-size: 20px;
+      }
+      
+      .section {
+        padding: 40px 20px;
+      }
+      
+      .section-title {
+        font-size: 28px;
+      }
+      
+      .hero-actions {
         flex-direction: column;
-        gap: 16px;
-        text-align: center;
+        align-items: center;
+      }
+      
+      .hero-actions .btn {
+        width: 200px;
       }
       
       .sports-grid {
@@ -710,10 +893,6 @@
       .stats {
         flex-wrap: wrap;
         justify-content: center;
-      }
-      
-      .modal-odds-grid {
-        grid-template-columns: 1fr;
       }
 
       /* Mobile menu styles */
@@ -731,18 +910,24 @@
     }
 
     @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+      
+      .hero p {
+        font-size: 16px;
+      }
+      
+      .hero-quote {
+        font-size: 18px;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+      
       .time-selector {
         flex-wrap: wrap;
-        justify-content: center;
-      }
-      
-      .hero-actions {
-        flex-direction: column;
-        width: 100%;
-      }
-      
-      .hero-actions .btn {
-        width: 100%;
         justify-content: center;
       }
     }
@@ -759,17 +944,11 @@
       <button class="menu-toggle" id="menuToggle">☰</button>
       
       <div class="actions">
-        <div class="search-bar">
-          <input type="text" class="search-input" placeholder="Search events...">
-        </div>
         <button class="btn outline">Login</button>
         <button class="btn primary">Register</button>
       </div>
       
       <div class="mobile-menu" id="mobileMenu">
-        <div class="search-bar mobile-search">
-          <input type="text" class="search-input" placeholder="Search events...">
-        </div>
         <div style="display: flex; gap: 8px;">
           <button class="btn outline" style="flex: 1;">Login</button>
           <button class="btn primary" style="flex: 1;">Register</button>
@@ -777,305 +956,263 @@
       </div>
     </header>
 
-    <main class="main">
-      <aside class="sidebar">
-        <nav>
-          <a class="nav-item active">All Sports</a>
-          <a class="nav-item">Live Now</a>
-          <a class="nav-item">Football</a>
-          <a class="nav-item">Basketball</a>
-          <a class="nav-item">Tennis</a>
-          <a class="nav-item">Baseball</a>
-          <a class="nav-item">Esports</a>
-        </nav>
-      </aside>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Experience Betting Excellence with Unmatched Accuracy</h1>
+        <p>Join thousands of winning bettors who trust Kai Odds for the most precise predictions and highest-value opportunities</p>
+        
+        <div class="hero-quote">
+          Get the most accurate odds and maximize your winning potential
+        </div>
+        
+        <div class="hero-actions">
+          <button class="btn primary">Start Winning Today</button>
+          <button class="btn outline">Explore Premium Features</button>
+        </div>
+      </div>
+    </section>
 
-      <section class="content">
-        <section class="hero">
-          <div>
-            <h1>Professional Sports Betting Odds</h1>
-            <p class="text-muted">Real-time odds from top bookmakers • Live betting • Cash out</p>
-            
-            <div class="time-selector">
-              <button class="time-btn active">Live Now</button>
-              <button class="time-btn">Today</button>
-              <button class="time-btn">Tomorrow</button>
-              <button class="time-btn">Future</button>
-            </div>
-          </div>
-          <div class="hero-actions">
-            <button class="btn primary">Place Bet</button>
-            <button class="btn outline">Live Betting</button>
-          </div>
-        </section>
+    <!-- About Section -->
+    <section class="section">
+      <h2 class="section-title">About Kai Odds</h2>
+      <p class="section-subtitle">We're revolutionizing sports betting with cutting-edge analytics and unparalleled market insights</p>
+      
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Precision Betting Redefined</h3>
+          <p>At Kai Odds, we've transformed the betting landscape by combining decades of sports expertise with advanced algorithmic analysis. Our team of data scientists, statisticians, and professional bettors work around the clock to deliver odds that consistently outperform the market.</p>
+          <p>We don't just follow the trends – we set them. Our proprietary models analyze thousands of data points in real-time, identifying value opportunities that others miss. Whether you're a casual bettor or a seasoned professional, Kai Odds gives you the competitive edge you need to succeed.</p>
+          <p>With a track record of 87% accuracy across major leagues and a client satisfaction rate of 96%, we're the trusted choice for bettors who demand results.</p>
+        </div>
+        <div class="about-image">
+          <img src="Img/KO.png" alt="Data analytics and sports betting">
+        </div>
+      </div>
+    </section>
 
-        <div class="stats">
-          <div class="stat">
-            <div class="stat-value">247</div>
-            <div class="stat-label">Live Events</div>
-          </div>
-          <div class="stat">
-            <div class="stat-value">1,842</div>
-            <div class="stat-label">Markets</div>
-          </div>
-          <div class="stat">
-            <div class="stat-value">24</div>
-            <div class="stat-label">Sports</div>
-          </div>
-          <div class="stat">
-            <div class="stat-value">12</div>
-            <div class="stat-label">Bookmakers</div>
+    <!-- Services Section - Original Software Interface -->
+    <section class="section">
+      <h2 class="section-title">Our Premium Platform</h2>
+      <p class="section-subtitle">Experience our cutting-edge betting interface with real-time odds, live betting, and advanced analytics</p>
+      
+      <div class="software-interface">
+        <div class="software-header">
+          <div class="software-title">Kai Odds Professional Platform</div>
+          <div class="software-controls">
+            <button class="btn outline">Live Events</button>
+            <button class="btn primary">My Bets</button>
           </div>
         </div>
+        
+        <div class="software-body">
+          <div class="main">
+            <aside class="sidebar">
+              <nav>
+                <a class="nav-item active">All Sports</a>
+                <a class="nav-item">Live Now</a>
+                <a class="nav-item">Football</a>
+                <a class="nav-item">Basketball</a>
+                <a class="nav-item">Tennis</a>
+                <a class="nav-item">Baseball</a>
+                <a class="nav-item">Esports</a>
+              </nav>
+            </aside>
 
-        <section class="sports-grid">
-          <article class="sport-card">
-            <div class="sport-header">
-              <div class="match-info">
-                <h3>Arsenal <span class="live-indicator"><span class="live-pulse"></span> LIVE</span></h3>
-                <p>vs Manchester City — Premier League</p>
+            <section class="content">
+              <div class="time-selector">
+                <button class="time-btn active">Live Now</button>
+                <button class="time-btn">Today</button>
+                <button class="time-btn">Tomorrow</button>
+                <button class="time-btn">Future</button>
               </div>
-              <div class="odds">
-                <div class="odd">1.78</div>
-                <div class="odd">3.20</div>
-                <div class="odd">4.50</div>
-              </div>
-            </div>
-            <div class="sport-body">
-              <div class="market">
-                <span class="market-name">Match Winner</span>
-                <div class="mini-odds">
-                  <button class="mini">1.78</button>
-                  <button class="mini">3.20</button>
-                  <button class="mini">4.50</button>
-                </div>
-              </div>
-              <div class="market">
-                <span class="market-name">Over/Under 2.5</span>
-                <div class="mini-odds">
-                  <button class="mini">1.45</button>
-                  <button class="mini">2.65</button>
-                </div>
-              </div>
-              <div class="view-more">
-                <button class="view-more-btn" data-match="arsenal-man-city">View More Odds</button>
-              </div>
-            </div>
-          </article>
 
-          <article class="sport-card">
-            <div class="sport-header">
-              <div class="match-info">
-                <h3>Lakers <span class="live-indicator"><span class="live-pulse"></span> LIVE</span></h3>
-                <p>vs Celtics — NBA</p>
-              </div>
-              <div class="odds">
-                <div class="odd">2.30</div>
-                <div class="odd">1.65</div>
-                <div class="odd">—</div>
-              </div>
-            </div>
-            <div class="sport-body">
-              <div class="market">
-                <span class="market-name">Match Winner</span>
-                <div class="mini-odds">
-                  <button class="mini">2.30</button>
-                  <button class="mini">1.65</button>
+              <div class="stats">
+                <div class="stat">
+                  <div class="stat-value">247</div>
+                  <div class="stat-label">Live Events</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">1,842</div>
+                  <div class="stat-label">Markets</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">24</div>
+                  <div class="stat-label">Sports</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">12</div>
+                  <div class="stat-label">Bookmakers</div>
                 </div>
               </div>
-              <div class="market">
-                <span class="market-name">Over/Under 220.5</span>
-                <div class="mini-odds">
-                  <button class="mini">1.90</button>
-                  <button class="mini">1.90</button>
-                </div>
-              </div>
-              <div class="view-more">
-                <button class="view-more-btn" data-match="lakers-celtics">View More Odds</button>
-              </div>
-            </div>
-          </article>
 
-          <article class="sport-card">
-            <div class="sport-header">
-              <div class="match-info">
-                <h3>Djokovic</h3>
-                <p>vs Nadal — French Open</p>
-              </div>
-              <div class="odds">
-                <div class="odd">1.45</div>
-                <div class="odd">2.80</div>
-                <div class="odd">—</div>
-              </div>
-            </div>
-            <div class="sport-body">
-              <div class="market">
-                <span class="market-name">Match Winner</span>
-                <div class="mini-odds">
-                  <button class="mini">1.45</button>
-                  <button class="mini">2.80</button>
-                </div>
-              </div>
-              <div class="market">
-                <span class="market-name">Total Sets</span>
-                <div class="mini-odds">
-                  <button class="mini">2.10</button>
-                  <button class="mini">1.72</button>
-                </div>
-              </div>
-              <div class="view-more">
-                <button class="view-more-btn" data-match="djokovic-nadal">View More Odds</button>
-              </div>
-            </div>
-          </article>
+              <section class="sports-grid">
+                <article class="sport-card">
+                  <div class="sport-header">
+                    <div class="match-info">
+                      <h3>Arsenal <span class="live-indicator"><span class="live-pulse"></span> LIVE</span></h3>
+                      <p>vs Manchester City — Premier League</p>
+                    </div>
+                    <div class="odds">
+                      <div class="odd">1.78</div>
+                      <div class="odd">3.20</div>
+                      <div class="odd">4.50</div>
+                    </div>
+                  </div>
+                  <div class="sport-body">
+                    <div class="market">
+                      <span class="market-name">Match Winner</span>
+                      <div class="mini-odds">
+                        <button class="mini">1.78</button>
+                        <button class="mini">3.20</button>
+                        <button class="mini">4.50</button>
+                      </div>
+                    </div>
+                    <div class="market">
+                      <span class="market-name">Over/Under 2.5</span>
+                      <div class="mini-odds">
+                        <button class="mini">1.45</button>
+                        <button class="mini">2.65</button>
+                      </div>
+                    </div>
+                    <div class="view-more">
+                      <button class="view-more-btn">View More Odds</button>
+                    </div>
+                  </div>
+                </article>
 
-          <article class="sport-card">
-            <div class="sport-header">
-              <div class="match-info">
-                <h3>Astralis</h3>
-                <p>vs Faze Clan — CS:GO Major</p>
-              </div>
-              <div class="odds">
-                <div class="odd">2.10</div>
-                <div class="odd">1.70</div>
-                <div class="odd">—</div>
-              </div>
-            </div>
-            <div class="sport-body">
-              <div class="market">
-                <span class="market-name">Match Winner</span>
-                <div class="mini-odds">
-                  <button class="mini">2.10</button>
-                  <button class="mini">1.70</button>
-                </div>
-              </div>
-              <div class="market">
-                <span class="market-name">Map 1 Winner</span>
-                <div class="mini-odds">
-                  <button class="mini">2.25</button>
-                  <button class="mini">1.60</button>
-                </div>
-              </div>
-              <div class="view-more">
-                <button class="view-more-btn" data-match="astralis-faze">View More Odds</button>
-              </div>
-            </div>
-          </article>
+                <article class="sport-card">
+                  <div class="sport-header">
+                    <div class="match-info">
+                      <h3>Lakers <span class="live-indicator"><span class="live-pulse"></span> LIVE</span></h3>
+                      <p>vs Celtics — NBA</p>
+                    </div>
+                    <div class="odds">
+                      <div class="odd">2.30</div>
+                      <div class="odd">1.65</div>
+                      <div class="odd">—</div>
+                    </div>
+                  </div>
+                  <div class="sport-body">
+                    <div class="market">
+                      <span class="market-name">Match Winner</span>
+                      <div class="mini-odds">
+                        <button class="mini">2.30</button>
+                        <button class="mini">1.65</button>
+                      </div>
+                    </div>
+                    <div class="market">
+                      <span class="market-name">Over/Under 220.5</span>
+                      <div class="mini-odds">
+                        <button class="mini">1.90</button>
+                        <button class="mini">1.90</button>
+                      </div>
+                    </div>
+                    <div class="view-more">
+                      <button class="view-more-btn">View More Odds</button>
+                    </div>
+                  </div>
+                </article>
+              </section>
+            </section>
 
-          <article class="sport-card">
-            <div class="sport-header">
-              <div class="match-info">
-                <h3>Yankees</h3>
-                <p>vs Red Sox — MLB</p>
+            <aside class="bet-slip">
+              <h4>Bet Slip</h4>
+              <div class="bet-slip-content">
+                <div class="empty">Add selections to your bet slip</div>
               </div>
-              <div class="odds">
-                <div class="odd">1.85</div>
-                <div class="odd">2.00</div>
-                <div class="odd">—</div>
-              </div>
-            </div>
-            <div class="sport-body">
-              <div class="market">
-                <span class="market-name">Match Winner</span>
-                <div class="mini-odds">
-                  <button class="mini">1.85</button>
-                  <button class="mini">2.00</button>
+              <div class="total-section">
+                <div class="total-row">
+                  <span>Total Odds:</span>
+                  <span class="total-amount">0.00</span>
                 </div>
-              </div>
-              <div class="market">
-                <span class="market-name">Run Line -1.5</span>
-                <div class="mini-odds">
-                  <button class="mini">2.10</button>
-                  <button class="mini">1.75</button>
+                <div class="total-row">
+                  <span>Potential Win:</span>
+                  <span class="total-amount">$0.00</span>
                 </div>
+                <button class="btn primary" style="width: 100%; margin-top: 12px;" disabled>Place Bet</button>
               </div>
-              <div class="view-more">
-                <button class="view-more-btn" data-match="yankees-redsox">View More Odds</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="sport-card">
-            <div class="sport-header">
-              <div class="match-info">
-                <h3>Dallas Cowboys</h3>
-                <p>vs Philadelphia Eagles — NFL</p>
-              </div>
-              <div class="odds">
-                <div class="odd">2.15</div>
-                <div class="odd">1.72</div>
-                <div class="odd">—</div>
-              </div>
-            </div>
-            <div class="sport-body">
-              <div class="market">
-                <span class="market-name">Match Winner</span>
-                <div class="mini-odds">
-                  <button class="mini">2.15</button>
-                  <button class="mini">1.72</button>
-                </div>
-              </div>
-              <div class="market">
-                <span class="market-name">Spread +3.5</span>
-                <div class="mini-odds">
-                  <button class="mini">1.90</button>
-                  <button class="mini">1.90</button>
-                </div>
-              </div>
-              <div class="view-more">
-                <button class="view-more-btn" data-match="cowboys-eagles">View More Odds</button>
-              </div>
-            </div>
-          </article>
-        </section>
-      </section>
-
-      <aside class="bet-slip">
-        <h4>Bet Slip</h4>
-        <div class="bet-slip-content">
-          <div class="empty">Add selections to your bet slip</div>
-        </div>
-        <div class="total-section">
-          <div class="total-row">
-            <span>Total Odds:</span>
-            <span class="total-amount">0.00</span>
+            </aside>
           </div>
-          <div class="total-row">
-            <span>Potential Win:</span>
-            <span class="total-amount">$0.00</span>
-          </div>
-          <button class="btn primary" style="width: 100%; margin-top: 12px;" disabled>Place Bet</button>
         </div>
-      </aside>
-    </main>
+      </div>
+    </section>
 
+    <!-- Steps Section -->
+    <section class="section">
+      <h2 class="section-title">Start Winning in 3 Simple Steps</h2>
+      <p class="section-subtitle">Join the elite community of successful bettors who trust Kai Odds for consistent profits</p>
+      
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Create Your Account</h3>
+          <p class="step-description">Sign up in under 60 seconds with our streamlined registration process. No complex verification required to get started.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Access Premium Tools</h3>
+          <p class="step-description">Immediately unlock our suite of professional betting tools and start exploring thousands of value opportunities.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Place Winning Bets</h3>
+          <p class="step-description">Use our accurate predictions and real-time odds to place informed bets and start building your profits from day one.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-      <small>© 2023 Kai Odds — Professional Sports Betting Platform</small>
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Kai Odds</h3>
+          <p style="color: var(--text-muted); margin-bottom: 20px; line-height: 1.6;">The premier destination for professional sports bettors seeking accuracy, value, and consistent returns.</p>
+          <div style="display: flex; gap: 10px;">
+            <button class="btn outline" style="padding: 8px 16px;">Login</button>
+            <button class="btn primary" style="padding: 8px 16px;">Register</button>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Sports Coverage</h3>
+          <ul class="footer-links">
+            <li><a href="#">Football</a></li>
+            <li><a href="#">Basketball</a></li>
+            <li><a href="#">Tennis</a></li>
+            <li><a href="#">Baseball</a></li>
+            <li><a href="#">American Football</a></li>
+            <li><a href="#">Esports</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Company</h3>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Affiliate Program</a></li>
+            <li><a href="#">Responsible Gaming</a></li>
+            <li><a href="#">Press & Media</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Support</h3>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Payment Methods</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <small>© 2023 Kai Odds — Premium Sports Betting Platform. All rights reserved. | Gambling can be addictive, please play responsibly.</small>
+      </div>
     </footer>
   </div>
 
-  <!-- Modal for additional odds -->
-  <div class="modal" id="oddsModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title" id="modalTitle">Additional Odds</h2>
-        <button class="close-modal" id="closeModal">&times;</button>
-      </div>
-      <div class="modal-body" id="modalBody">
-        <!-- Modal content will be populated by JavaScript -->
-      </div>
-    </div>
-  </div>
-
-  <div class="notification" id="notification">Selection added to bet slip!</div>
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const notification = document.getElementById('notification');
-      const modal = document.getElementById('oddsModal');
-      const modalTitle = document.getElementById('modalTitle');
-      const modalBody = document.getElementById('modalBody');
-      const closeModal = document.getElementById('closeModal');
       const menuToggle = document.getElementById('menuToggle');
       const mobileMenu = document.getElementById('mobileMenu');
 
@@ -1106,15 +1243,6 @@
           item.classList.add('active');
         });
       });
-
-      // Show notification
-      function showNotification(message) {
-        notification.textContent = message;
-        notification.classList.add('show');
-        setTimeout(() => {
-          notification.classList.remove('show');
-        }, 3000);
-      }
 
       // Add to bet slip functionality
       document.querySelectorAll('.mini, .odd').forEach(btn => {
@@ -1152,7 +1280,6 @@
           
           slip.appendChild(slipItem);
           updateBetSlip();
-          showNotification('Selection added to bet slip!');
         });
       });
 
@@ -1201,123 +1328,6 @@
           updateBetSlip();
         }
       });
-
-      // Modal functionality
-      document.querySelectorAll('.view-more-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const matchId = btn.getAttribute('data-match');
-          openModal(matchId);
-        });
-      });
-
-      closeModal.addEventListener('click', () => {
-        modal.classList.remove('active');
-      });
-
-      // Close modal when clicking outside
-      window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          modal.classList.remove('active');
-        }
-      });
-
-      // Function to open modal with specific match data
-      function openModal(matchId) {
-        const matchData = getMatchData(matchId);
-        modalTitle.textContent = matchData.title;
-        
-        let modalContent = '<div class="modal-odds-grid">';
-        matchData.odds.forEach(odd => {
-          modalContent += `
-            <div class="modal-odds-card">
-              <div class="modal-odds-name">${odd.name}</div>
-              <div class="modal-odds-value">${odd.value}</div>
-              <button class="mini" onclick="addToBetSlipFromModal('${odd.name}', ${odd.value})">Add to Bet Slip</button>
-            </div>
-          `;
-        });
-        modalContent += '</div>';
-        
-        modalBody.innerHTML = modalContent;
-        modal.classList.add('active');
-      }
-
-      // Function to get match data (in a real app, this would come from an API)
-      function getMatchData(matchId) {
-        const matchData = {
-          'arsenal-man-city': {
-            title: 'Arsenal vs Manchester City - Additional Odds',
-            odds: [
-              { name: 'Correct Score 1-0', value: 9.50 },
-              { name: 'Correct Score 2-1', value: 10.00 },
-              { name: 'Correct Score 2-0', value: 12.00 },
-              { name: 'Both Teams to Score - Yes', value: 1.72 },
-              { name: 'Both Teams to Score - No', value: 2.05 },
-              { name: 'First Goalscorer - Saka', value: 8.50 },
-              { name: 'First Goalscorer - Haaland', value: 4.50 },
-              { name: 'Half Time/Full Time - Arsenal/Arsenal', value: 3.50 }
-            ]
-          },
-          'lakers-celtics': {
-            title: 'Lakers vs Celtics - Additional Odds',
-            odds: [
-              { name: 'Total Points Over 225.5', value: 1.90 },
-              { name: 'Total Points Under 225.5', value: 1.90 },
-              { name: 'Lakers -5.5', value: 2.10 },
-              { name: 'Celtics +5.5', value: 1.75 },
-              { name: 'First Quarter Winner - Lakers', value: 2.20 },
-              { name: 'First Quarter Winner - Celtics', value: 1.65 },
-              { name: 'Player Points - LeBron Over 28.5', value: 1.85 },
-              { name: 'Player Points - Tatum Over 30.5', value: 1.95 }
-            ]
-          },
-          'djokovic-nadal': {
-            title: 'Djokovic vs Nadal - Additional Odds',
-            odds: [
-              { name: 'Djokovic 3-0', value: 3.50 },
-              { name: 'Djokovic 3-1', value: 4.00 },
-              { name: 'Nadal 3-2', value: 6.50 },
-              { name: 'Total Games Over 38.5', value: 1.90 },
-              { name: 'Total Games Under 38.5', value: 1.90 },
-              { name: 'First Set Winner - Djokovic', value: 1.60 },
-              { name: 'First Set Winner - Nadal', value: 2.30 },
-              { name: 'Tie Break in Match - Yes', value: 2.10 }
-            ]
-          }
-        };
-        
-        return matchData[matchId] || { title: 'Additional Odds', odds: [] };
-      }
-
-      // Function to add odds from modal to bet slip
-      window.addToBetSlipFromModal = function(marketName, oddsValue) {
-        const slip = document.querySelector('.bet-slip-content');
-        const empty = slip.querySelector('.empty');
-        const placeBetBtn = document.querySelector('.bet-slip .btn.primary');
-        
-        if (empty) empty.remove();
-        
-        const slipItem = document.createElement('div');
-        slipItem.className = 'slip-item';
-        slipItem.innerHTML = `
-          <div class="slip-item-header">
-            <div>
-              <strong>${modalTitle.textContent.split(' - ')[0]}</strong>
-              <div class="text-muted">${marketName}</div>
-            </div>
-            <div class="slip-item-odds">${oddsValue}</div>
-          </div>
-          <div class="slip-item-footer">
-            <input type="number" class="stake-input" placeholder="Stake" min="1" value="10">
-            <button class="btn danger" onclick="this.parentElement.parentElement.remove(); updateBetSlip()">Remove</button>
-          </div>
-        `;
-        
-        slip.appendChild(slipItem);
-        updateBetSlip();
-        showNotification('Selection added to bet slip!');
-        modal.classList.remove('active');
-      };
     });
   </script>
 </body>
